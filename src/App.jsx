@@ -1,7 +1,16 @@
 import "./App.css";
+import NavHeader from "./components/Header";
+import HomePage from "./components/Home";
 
 function App() {
-	return <h1 className="text-3xl font-bold underline text-red-500">hello</h1>;
+	return (
+		<>
+			<div className="flex flex-col  ">
+				<NavHeader />
+				<HomePage />
+			</div>
+		</>
+	);
 }
 
 export default App;
