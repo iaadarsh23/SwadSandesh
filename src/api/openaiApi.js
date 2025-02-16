@@ -1,4 +1,4 @@
-export const getdata = async (userInput) => {
+export const getdata = async (dishName) => {
 	const API_URL = "https://api.groq.com/openai/v1/chat/completions";
 	const apiKey = import.meta.env.VITE_GROQ_API_KEY;
 
@@ -10,7 +10,8 @@ export const getdata = async (userInput) => {
 				Authorization: `Bearer ${apiKey}`,
 			},
 			body: JSON.stringify({
-				messages: [{ role: "user", content: userInput }],
+				messages: [{ role: "user", content: dishName }],
+
 				model: "llama3-70b-8192",
 			}),
 		});

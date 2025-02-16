@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getdata } from "../api/openaiApi";
+
 export default function MyForm() {
 	const {
 		register,
@@ -9,12 +10,21 @@ export default function MyForm() {
 		formState: { errors, isSubmitting },
 	} = useForm();
 
+	//for displaying the data
+	const [dishName, setdishName] = useState("");
+
+	//storing the data in a array.
+	let [recipe, setRecipe] = useState([]);
+
 	//handlesubmit is data dega aur ye object return karvayega
-	function OnSubmit(data) {
-		// useEffect(() => {
-		// 	getdata(data);
-		// }, []);
-		console.log(data);
+	async function OnSubmit(data) {
+		try {
+			const response = await getdata(data.dishName);
+			setRecipe((prev) => [...prev, response]);
+		} catch (error) {
+			console.error("Error fetching data:", error);
+		}
+		setdishName("");
 	}
 
 	return (
@@ -28,12 +38,13 @@ export default function MyForm() {
 					aria-label="ingredients"
 					name="dish"
 					placeholder="eg. Shahi Paneer"
+					onChange={(e) => setdishName(e.target.value)}
 					className="border border-gray-300 p-2 rounded-md w-[50rem]"
 					//1. react-hook-form se link kar rhe hai hum
 					//2.applying validation to it
 					{...register("dishName", {
 						required: true,
-						maxLength: 15,
+						maxLength: 100,
 						minLength: 3,
 					})}
 				/>
@@ -48,6 +59,14 @@ export default function MyForm() {
 					Get Recipe
 				</button>
 			</form>
+			<div>
+				<h2>Recipes:</h2>
+				<ul>
+					{recipe.map((item, index) => (
+						<li key={index}>{item}</li>
+					))}
+				</ul>
+			</div>
 		</div>
 	);
 }
