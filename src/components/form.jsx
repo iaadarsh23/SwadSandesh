@@ -15,24 +15,30 @@ export default function MyForm() {
 	const [dishName, setdishName] = useState("");
 
 	//storing the data in a array.
-	let [recipe, setRecipe] = useState([]);
+
+	//cleaning the response
+	let [cleanData, setCleanData] = useState([]);
 
 	//handlesubmit is data dega aur ye object return karvayega
 	async function OnSubmit(data) {
 		try {
 			const response = await getdata(data.dishName);
+
 			// Split the response into lines and store it in the recipe state
 			if (typeof response === "string") {
-				const recipeLines = response.split("\n"); // Split by newline
-				setRecipe(recipeLines); // Update the recipe state
+				const cleaned = response.replace(/\*/g, "").trim();
+				const recipeLines = cleaned.split("\n"); // Split by newline
+
+				setCleanData(recipeLines);
 			} else {
-				setRecipe(response); // If the response is already an array
+				setCleanData(response); // If the response is already an array
 			}
 		} catch (error) {
 			console.error("Error fetching data:", error);
 		}
 		//clearing the inputbox after submiting.
 		reset();
+		//response strind cleanup function
 	}
 
 	return (
@@ -76,11 +82,14 @@ export default function MyForm() {
 					{isSubmitting ? "Getting Recipe..." : "Get Recipe"}
 				</button>
 			</form>
-			<div>
-				<h2>Recipes:</h2>
-				<ul>
-					{recipe.map((item, index) => (
-						<li key={index}>{item}</li>
+			{/* displaying the data */}
+			<div className="flex flex-col justify-center items-center m-6 p-7">
+				<h2 className="font-bold m-7 text-5xl">Your Recipes:</h2>
+				<ul className=" border-3 border-green-600 rounded-2xl  m-5 p-5 text-2xl ">
+					{cleanData.map((item, index) => (
+						<li key={index} className=" m-6">
+							{item}
+						</li>
 					))}
 				</ul>
 			</div>
