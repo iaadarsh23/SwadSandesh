@@ -6,7 +6,8 @@ export default function MyForm() {
 	const {
 		register,
 		handleSubmit,
-		watch,
+		reset,
+
 		formState: { errors, isSubmitting },
 	} = useForm();
 
@@ -20,11 +21,18 @@ export default function MyForm() {
 	async function OnSubmit(data) {
 		try {
 			const response = await getdata(data.dishName);
-			setRecipe((prev) => [...prev, response]);
+			// Split the response into lines and store it in the recipe state
+			if (typeof response === "string") {
+				const recipeLines = response.split("\n"); // Split by newline
+				setRecipe(recipeLines); // Update the recipe state
+			} else {
+				setRecipe(response); // If the response is already an array
+			}
 		} catch (error) {
 			console.error("Error fetching data:", error);
 		}
-		setdishName("");
+		//clearing the inputbox after submiting.
+		reset();
 	}
 
 	return (
@@ -48,15 +56,24 @@ export default function MyForm() {
 						minLength: 3,
 					})}
 				/>
+				{/* error handling */}
+				{errors.dishName && (
+					<p className="text-red-500">
+						{errors.dishName.type === "required" && "Dish name is required"}
+						{errors.dishName.type === "minLength" &&
+							"Minimum length is 3 characters"}
+						{errors.dishName.type === "maxLength" &&
+							"Maximum length is 100 characters"}
+					</p>
+				)}
 				{/* button ko disabled kr denge when api is calling in backgroung */}
 				<button
 					type="submit"
 					className="w-[30rem] bg-black text-white p-2 rounded-md hover:bg-green-600"
 					disabled={isSubmitting}
 					//agr submit ho rha h toh getting recipe dikhega
-					value={isSubmitting ? "Getting Recipe" : "Get"}
 				>
-					Get Recipe
+					{isSubmitting ? "Getting Recipe..." : "Get Recipe"}
 				</button>
 			</form>
 			<div>

@@ -10,7 +10,16 @@ export const getdata = async (dishName) => {
 				Authorization: `Bearer ${apiKey}`,
 			},
 			body: JSON.stringify({
-				messages: [{ role: "user", content: dishName }],
+				messages: [
+					{
+						role: "system",
+						content:
+							"You are a recipe generator. Only return the recipe for the given dish. Do not add any extra information or greetings.",
+					},
+					{ role: "user", content: dishName },
+				],
+				temperature: 0.8, // Ensures more structured responses
+				//control the msg length
 
 				model: "llama3-70b-8192",
 			}),
