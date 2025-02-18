@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { getdata } from "../api/openaiApi";
+import bg1 from "/assets/images/c.jpg";
 
 export default function MyForm() {
 	const {
@@ -44,7 +45,16 @@ export default function MyForm() {
 	// ...existing imports and function declaration...
 
 	return (
-		<div className="min-h-screen " id="formbg">
+		<div
+			className="min-h-screen"
+			style={{
+				backgroundImage: `url(${bg1})`,
+				backgroundRepeat: "no-repeat",
+				backgroundSize: "cover",
+				backgroundPosition: "center",
+			}}
+			id="formbg"
+		>
 			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
 				<div className="text-center space-y-6">
 					<div className="relative inline-block">

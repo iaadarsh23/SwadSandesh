@@ -1,5 +1,7 @@
 import React from "react";
-
+import git from "/assets/images/github.png";
+import linkedin from "/assets/images/linkedin.png";
+import x from "/assets/images/twitter.png";
 const Navbar = () => {
 	return (
 		<nav className="top-0 z-50 flex justify-between items-center p-3 bg-white shadow-md border-b border-gray-300 px-[100px]">
@@ -17,7 +19,7 @@ const Navbar = () => {
 						className="hover:text-white transition duration-200"
 					>
 						<img
-							src="/assets/images/github.png"
+							src={git}
 							alt="GitHub"
 							style={{ width: "24px", height: "24px" }}
 						/>
@@ -30,7 +32,7 @@ const Navbar = () => {
 						className="hover:text-[#0A66C2] transition duration-200"
 					>
 						<img
-							src="/assets/images/linkedin.png"
+							src={linkedin}
 							alt="LinkedIn"
 							style={{ width: "24px", height: "24px" }}
 						/>
@@ -43,7 +45,7 @@ const Navbar = () => {
 						className="hover:text-[#1DA1F2] transition duration-200"
 					>
 						<img
-							src="/assets/images/twitter.png"
+							src={x}
 							alt="Twitter"
 							style={{ width: "24px", height: "24px" }}
 						/>
