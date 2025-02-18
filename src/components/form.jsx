@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { getdata } from "../api/openaiApi";
 
 export default function MyForm() {
@@ -44,7 +44,7 @@ export default function MyForm() {
 	// ...existing imports and function declaration...
 
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+		<div className="min-h-screen " id="formbg">
 			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
 				<div className="text-center space-y-6">
 					<div className="relative inline-block">
@@ -66,10 +66,16 @@ export default function MyForm() {
 					</div>
 
 					<div className="space-y-4">
-						<h1 className="text-4xl sm:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 tracking-tight">
-							Swad Sanket
+						<h1 className="relative inline-block">
+							{/* Background decoration */}
+							<span className="absolute inset-0 bg-white/90 backdrop-blur-sm rounded-2xl border-2 border-indigo-200 shadow-xl"></span>
+
+							{/* Main text */}
+							<span className="relative block text-4xl sm:text-6xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent p-6 tracking-tight">
+								Swad Sandesh
+							</span>
 						</h1>
-						<p className="text-slate-600 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
+						<p className="text-black text-xl sm:text-xl max-w-2xl mx-auto leading-relaxed font-bold">
 							Discover delicious recipes with our AI-powered recipe finder.
 							<span className="hidden sm:inline">
 								<br />

@@ -1,7 +1,7 @@
 #root {
-	max-width: 1400px;
+	max-width: none;
 	margin: 0 auto;
-	padding-top: 20px;
+	background-size: cover;
 	min-height: 100vh;
 }
 
@@ -18,4 +18,15 @@
 	a:nth-of-type(2) .logo {
 		animation: logo-spin infinite 20s linear;
 	}
+}
+#homepage {
+	background-image: url("./src/assets/images/a.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#formbg {
+	background-image: url("./src/assets/images/image.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }

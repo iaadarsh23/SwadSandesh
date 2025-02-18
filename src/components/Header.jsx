@@ -1,15 +1,57 @@
-export default function NavHeader() {
+import React from "react";
+
+const Navbar = () => {
 	return (
-		<nav className="relative flex justify-between items-center px-6 py-4 bg-white">
-			<div className="text-3xl font-bold text-green-700">
-				<a href="#">SwadSandesh</a>
+		<nav className="top-0 z-50 flex justify-between items-center p-3 bg-white shadow-md border-b border-gray-300 px-[100px]">
+			{/* Logo Section */}
+			<div className="text-3xl font-bold text-orange-700 hover:text-green-800 transition duration-200">
+				<a href="#">Swad Sandesh</a>
 			</div>
-			<ul className="flex gap-6 text-2xl text-gray-800">
-				<li className="hover:text-green-400 cursor-pointer">Home</li>
-				<li className="hover:text-green-400 cursor-pointer">GetRecipe</li>
-				<li className="hover:text-green-400 cursor-pointer">Contact</li>
+
+			{/* Social Links Section */}
+			<ul className="flex gap-6">
+				<li>
+					<a
+						href="https://github.com/iaadarsh23"
+						target="_blank"
+						className="hover:text-white transition duration-200"
+					>
+						<img
+							src="./src/assets/images/github.png"
+							alt="GitHub"
+							style={{ width: "24px", height: "24px" }}
+						/>
+					</a>
+				</li>
+				<li>
+					<a
+						href="https://www.linkedin.com/in/adarsh-tripathi-529199260/"
+						target="_blank"
+						className="hover:text-[#0A66C2] transition duration-200"
+					>
+						<img
+							src="./src/assets/images/linkedin.png"
+							alt="LinkedIn"
+							style={{ width: "24px", height: "24px" }}
+						/>
+					</a>
+				</li>
+				<li>
+					<a
+						href="https://x.com/adarshtrip2306"
+						target="_blank"
+						className="hover:text-[#1DA1F2] transition duration-200"
+					>
+						<img
+							src="./src/assets/images/twitter.png"
+							alt="Twitter"
+							style={{ width: "24px", height: "24px" }}
+						/>
+					</a>
+				</li>
 			</ul>
-			<div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-green-400 via-yellow-300 to-orange-400"></div>
 		</nav>
 	);
-}
+};
+
+export default Navbar;

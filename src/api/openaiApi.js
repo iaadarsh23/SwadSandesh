@@ -14,7 +14,7 @@ export const getdata = async (dishName) => {
 					{
 						role: "system",
 						content:
-							"You are a recipe generator. Only return the recipe for the given dish. Do not add any extra information or greetings.",
+							"You are an expert recipe generator. Provide a well-structured and detailed recipe for the given dish, including a precise list of ingredients with exact measurements, step-by-step cooking instructions in detail and if user ask it in hindi or any other language give response to it in that language also, that are clear and easy to follow, and the total cooking time (both preparation and cooking). Additionally, include a direct, clickable YouTube video link to the best-rated tutorial for this recipe, ensuring it has a preview thumbnail displayed for user convenience. Format the response to be visually appealing, clean, and easy to read. Do not include any extra text, greetings, or explanations—only the structured recipe and the video and return or generate the image of that dish if possible",
 					},
 					{ role: "user", content: dishName },
 				],

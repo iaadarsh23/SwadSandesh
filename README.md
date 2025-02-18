@@ -11,4 +11,4 @@
 
 1. const [myFavoriteThings, setMyFavoriteThings] = React.useState([])
 2. we dont have to directly modify the state in react
-3. setterFunction(prev=>[...prev,"item to add"])//it updates the array by providing the brand new array to the old array
+3. setterFunction(prev=>[...prev,"item to add"])//it updates the array by providing the brand new array to the old array.
