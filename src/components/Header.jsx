@@ -17,7 +17,7 @@ const Navbar = () => {
 						className="hover:text-white transition duration-200"
 					>
 						<img
-							src="./public/assets/images/github.png"
+							src="/assets/images/github.png"
 							alt="GitHub"
 							style={{ width: "24px", height: "24px" }}
 						/>
@@ -30,7 +30,7 @@ const Navbar = () => {
 						className="hover:text-[#0A66C2] transition duration-200"
 					>
 						<img
-							src="./public/assets/images/linkedin.png"
+							src="/assets/images/linkedin.png"
 							alt="LinkedIn"
 							style={{ width: "24px", height: "24px" }}
 						/>
@@ -43,7 +43,7 @@ const Navbar = () => {
 						className="hover:text-[#1DA1F2] transition duration-200"
 					>
 						<img
-							src="./public/assets/images/twitter.png"
+							src="/assets/images/twitter.png"
 							alt="Twitter"
 							style={{ width: "24px", height: "24px" }}
 						/>

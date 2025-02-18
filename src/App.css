@@ -20,13 +20,13 @@
 	}
 }
 #homepage {
-	background-image: url("./public/assets/images/a.jpg");
+	background-image: url("/assets/images/a.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
 #formbg {
-	background-image: url("./public/assets/images/c.jpg");
+	background-image: url("/assets/images/c.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
