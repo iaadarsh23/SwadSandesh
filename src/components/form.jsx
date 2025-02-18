@@ -75,7 +75,7 @@ export default function MyForm() {
 								Swad Sandesh
 							</span>
 						</h1>
-						<p className="text-black text-xl sm:text-xl max-w-2xl mx-auto leading-relaxed font-bold">
+						<p className="text-white text-xl sm:text-xl max-w-2xl mx-auto leading-relaxed font-bold">
 							Discover delicious recipes with our AI-powered recipe finder.
 							<span className="hidden sm:inline">
 								<br />
