@@ -10,9 +10,11 @@ Welcome to **Swadsandesh** – the AI-powered recipe app that brings the best cu
 Here are some screenshots of the app in action:
 
 *This is the homepage of Swadsandesh.*
-![Homepage](./assets/images/1.png)
+![Homepage](./public/assets/images/1.png)
 
-![Recipe Page](./assets/images/2.png)
+![Recipe Page](./public/assets/images/2.png)
+
+![Recipe Page](./public/assets/images/3.png)
 
 ## Features 🌟
 
