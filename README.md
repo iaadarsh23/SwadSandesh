@@ -5,6 +5,14 @@ Welcome to **Swadsandesh** – the AI-powered recipe app that brings the best cu
 **Live Demo**: [swadsanket.vercel.app](https://swadsanket.vercel.app)
 
 ---
+## Screenshots 📸
+
+Here are some screenshots of the app in action:
+
+*This is the homepage of Swadsandesh.*
+![Homepage](./assets/images/1.png)
+
+![Recipe Page](./assets/images/2.png)
 
 ## Features 🌟
 
