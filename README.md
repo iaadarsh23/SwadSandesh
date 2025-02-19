@@ -10,9 +10,11 @@ Welcome to **Swadsandesh** – the AI-powered recipe app that brings the best cu
 
 - **AI-Driven Recipe Suggestions**: Powered by Groq API to generate smart recipe suggestions based on your preferences.
 - **React + Tailwind UI**: A sleek, responsive design to offer the best user experience.
-- **Easy to Use**: Simple interface, quick recipe searches, and easy-to-follow instructions.
+- **Multi-Language Support**: Get recipes in **any language** of your choice. Swadsandesh adapts to the language you prefer!
+- **In-Depth Cooking Steps**: Offers **detailed, step-by-step cooking instructions** for any dish in the world, ensuring even beginners can follow along.
 - **Personalized Recipe Ideas**: Get recipe recommendations based on your input ingredients or desired cuisine.
 - **User-Friendly Interface**: Tailwind CSS ensures a beautiful and responsive design across all devices.
+
 
 ---
 
@@ -38,4 +40,6 @@ To run **Swadsandesh** locally, follow these steps:
 ```bash
 git clone https://github.com/your-username/swadsandesh.git
 cd swadsandesh
+
+
 
